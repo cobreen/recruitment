@@ -1,0 +1,444 @@
+:root {
+    --color-primary: #5299d3;
+    --color-primary-darken: #4188c2;
+    --color-secondary: #f7f8f9;
+    --color-secondary-darken: #e6e7e8;
+
+    --color-primary2: #e6e7e8;
+    --color-primary2-darken: #d5d6d7;
+
+    --color-success: #63cc63;
+
+    --color-danger: #ff5f5f;
+}
+
+* {
+    font-family: Arial;
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+}
+
+.wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: var(--color-primary);
+    padding: 25px;
+    min-height: 100vh;
+}
+
+.login, .register {
+    width: 320px;
+    width: 430px;
+    background: var(--color-secondary);
+    border-radius: 5px;
+    border: 1px solid gainsboro;
+    display: flex;
+    padding: 35px;
+    align-items: center;
+    flex-direction: column;
+    
+}
+
+.login .pokemon, .register .pokemon { 
+    background: var(--color-primary);
+    border-radius: 100%;
+    border: 2px solid black;
+    width: 300px;
+    height: 300px;
+}
+.login .pokemon img, .register .pokemon img {
+    width: 100%;
+    height: 100%;
+    border-radius: 100%;
+}
+
+.login form, .register form{
+    width: 100%;
+}
+
+.login h1, .register h1{
+    font-size: 30px;
+    font-weight: normal;
+}
+
+.login input, .login button, .register button, .register input {
+    border: 1px solid gainsboro;
+    padding: 20px 15px;
+    width: 100%;
+}
+
+.login button, .register button{
+    margin-top: 20px;
+    background-color: var(--color-primary);
+    color: var(--color-secondary);
+    font-size: 20px;
+    cursor: pointer;
+    transition: .5s;
+}
+
+.login button:hover, .register button:hover {
+    background: var(--color-primary-darken);
+}
+
+.login .or, .register .or {
+    color: gainsboro;
+    font-size: 20px;
+    text-align: center;
+    margin: 20px 0;
+    position: relative;
+}
+
+.login .or:before, .login .or:after, .register .or:before, .register .or:after {
+    content: "";
+    position: absolute;
+    height: 1px;
+    background: gainsboro;
+    width: 45%;
+    top: calc(50% + 1px);
+}
+
+.login .or:before, .register .or:before {
+    left: 0;
+}
+
+.login .or:after, .register .or:after {
+    right: 0;
+}
+
+.btn {
+    margin-top: 20px;
+    background-color: var(--color-primary);
+    color: var(--color-secondary);
+    font-size: 20px;
+    cursor: pointer;
+    transition: .5s;
+    display: block;
+    border: 1px solid gainsboro;
+    padding: 20px 15px;
+    width: 100%;
+    text-align: center;
+    text-decoration: none;
+}
+
+.btn:hover {
+    background: var(--color-primary-darken);
+}
+
+.btn.btn-secondary {
+    background-color: var(--color-primary2);
+    color: black;
+}
+
+.btn.btn-secondary:hover {
+    background: var(--color-primary2-darken);
+}
+
+.errors {
+    width: 100%;
+}
+
+.errors .error {
+    background: var(--color-danger);
+    padding: 10px 20px;
+    width: 100%;
+    color: white;
+    font-weight: bold;
+    border-left: 5px solid #b93f3f;
+}
+
+.index {
+    display:flex;
+    justify-content: space-between;
+    width: 100%;
+    min-height: calc(100vh - 50px);
+    row-gap: 25px;
+    column-gap: 25px;
+    flex-wrap: wrap;
+}
+
+.index .table, .index > .actions {
+    background: white;
+    border-radius: 5px;
+    min-height: 100%;
+    flex: 1;
+    min-width: 320px;
+    /* min-height: 300px; */
+}
+
+.index > .actions {
+    padding: 25px;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+
+.index .actions .account {
+    border-radius: 100%;
+    border: 2px solid black;
+    height: 300px;
+    width: 300px;
+}
+
+.quit {
+    color: red;
+    margin-bottom: 20px;
+    font-size: 20px;
+}
+
+.index .actions .account img {
+    height: 100%;
+    width: 100%;
+    border-radius: 100%;
+}
+
+.index > .actions .search {
+    width: 100%;
+}
+
+.index > .actions .search input {
+    width: 100%;
+    padding: 10px 20px;
+    text-align: center;
+    font-weight: bold;
+    font-size: 20px;
+    border: 1px solid gainsboro;
+    transition: .5s;
+}
+
+.index .actions .search input:focus {
+    background-color: var(--color-primary);
+    color: white;
+}
+
+.index .actions .search input.success {
+    background-color: var(--color-success);
+    color: white;
+}
+
+.index #history {
+    min-width: 470px;
+    padding: 25px;
+}
+
+.index #history h1 {
+    text-align: center;
+    margin: 0;
+}
+
+.history_table {
+    margin-top: 25px;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 100px;
+    border-radius: 5px 5px 0px 0px;
+    overflow: hidden;
+}
+
+.history_table > div {
+    padding: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.history_table .header {
+    background-color: var(--color-primary);
+    color: white;
+    font-weight: bold;
+}
+
+.history_table > div:not(.header):nth-child(4n) {
+    border-right: 3px solid var(--color-primary);
+}
+
+.history_table > div:not(.header):nth-child(4n-7) {
+    border-left: 3px solid var(--color-primary);
+}
+
+.history_table .pokemon-name {
+    cursor: pointer;
+    font-size: 20px;
+    color: var(--color-primary);
+}
+
+.history_table .pokemon-name span {
+    text-decoration: underline;
+}
+
+.history_table .actions button {
+    background-color: var(--color-danger);
+    border: none;
+    border-radius: 5px;
+    color: white;
+    padding: 5px 10px;
+}
+
+.table-pagination { 
+    display: flex;
+    border-radius: 0 0 5px 5px;
+    overflow: hidden;
+}
+
+.table-pagination > div {
+    background-color: var(--color-primary);
+    padding: 15px;
+    text-align: center;
+    color: white;
+}
+
+.table-pagination .prev, .table-pagination .next {
+    flex: 1;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.table-pagination .page {
+    flex: 4;
+}
+
+#pokemon {
+    margin-top: 25px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    width: 100%;
+}
+
+#pokemon .pokemon_account_info {
+    border: 1px solid gainsboro;
+    max-height: 370px;
+    margin-bottom: 25px;
+}
+ 
+#pokemon .pokemon_account_info h2 {
+    text-align: center;
+    text-transform: capitalize;
+    margin: 0;
+    padding: 20px;
+    border-top: 1px solid gainsboro;
+    background: var(--color-primary);
+    color: white;
+}
+
+#pokemon .pokemon_image img {
+    width: 300px;
+    height: 300px;
+    image-rendering: crisp-edges;
+}
+
+#pokemon .pokemon_moves {
+    margin: 0;
+    display: grid;
+    grid-gap: 5px;
+    grid-template-columns: repeat(auto-fill, minmax(110px, 1fr));
+    flex: 1;
+    margin: 0 0 0 5px;
+    min-width: 320px;
+}
+
+#pokemon .pokemon_moves > div {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: var(--color-primary);
+    color: white;
+    padding: 5px 10px;
+}
+
+.not_found {
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    flex-wrap: wrap;
+    font-size: 10rem;
+    align-items: center;
+    justify-content: center;
+    color: gainsboro;
+}
+
+@media screen and (max-width: 726px) {
+    #pokemon {
+        justify-content: center;
+    }
+
+    #pokemon .pokemon_moves {
+        margin-left: 0;
+    }
+}
+
+@media screen and (max-width: 410px) {
+    .wrapper {
+        padding: 0;
+    }
+
+    .login, .register, #history {
+        border-radius: 0;
+        padding: 5px;
+    }
+}
+
+@media screen and (max-width: 525px) {
+    .index #history {
+        min-width: 320px;
+        padding:25px 0px 0 0;
+    }
+    
+    .table-pagination {
+        border-radius: 0;
+        border-bottom: 1px solid white;
+    }
+
+    .history_table {
+        display: flex;
+        flex-wrap: wrap;
+    }
+
+    #history .history_table {
+        border-radius: 0;
+    }
+
+    .history_table .header{
+        display: none;
+    }
+
+    #history .history_table > div:not(.header) {
+        min-width: 100%;
+        border-left: none;
+        border-right: none;
+        display: flex;
+        justify-content: space-between;
+    }
+
+    .history_table > div:not(.header) {
+        border-bottom: 1px solid #f7f7f7;
+    }
+
+    .history_table > div:not(.header):nth-child(4n-3):before { 
+        content: "Pokemon name"; 
+        text-decoration: none; 
+        color: black
+    }
+	.history_table > div:not(.header):nth-child(4n-2):before { content: "Searcher name"; }
+	.history_table > div:not(.header):nth-child(4n-1):before { content: "Searched at"; }
+    .history_table > div:not(.header):nth-child(4n):before { content: "Actions"; }
+
+    .history_table > div:not(.header):nth-child(8n-3),
+	.history_table > div:not(.header):nth-child(8n-2),
+	.history_table > div:not(.header):nth-child(8n-1),
+    .history_table > div:not(.header):nth-child(8n) {
+        background: #f7f7f7;
+        border-bottom: 1px solid white;
+    }
+    
+    .history_table > div:not(.header):before { 
+        text-align: left;
+    }
+
+    .index > .actions {
+        padding: 25px 10px;
+        border-radius: 0;
+    }
+}
