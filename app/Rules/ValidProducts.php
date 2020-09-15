@@ -36,7 +36,7 @@ class ValidProducts implements Rule
             ]);
             if ($validator->fails()) {
                 throw new HttpResponseException(response()->json($validator->errors(), 422));
-           }
+            }
         }
         return true;
     }

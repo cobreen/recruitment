@@ -3,6 +3,7 @@
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Api\YmlController;
+use App\Http\Controllers\Api\QueueStateController;
 
 /*
 |--------------------------------------------------------------------------
@@ -22,4 +23,17 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
 Route::group(["prefix" => "yml", "middleware" => ["apiKeyValidated"]], function() {
     Route::post("/make", [YmlController::class, "SaveAndEnqueue"]);
     Route::get("/give", [YmlController::class, "GiveResult"]);
+});
+
+Route::group(["middleware" => ["apiKeyValidated"], "prefix" => "queue"], function () {
+    Route::get("/{token}/get", [QueueStateController::class, "getAll"]);
+    Route::get("/{token}/{product_id}/get", [QueueStateController::class, "getProduct"]);
+    Route::get("/{token}/{product_id}/{attribute_name}/get", [QueueStateController::class, "getProductAttribute"]);
+
+    Route::post("/{token}/add", [QueueStateController::class, "addProduct"]);
+
+    Route::post("/{token}/{product_id}/{attribute_name}/{value}", [QueueStateController::class, "updateProductAttribute"]);
+
+    Route::post("/{token}/{product_id}/drop", [QueueStateController::class, "dropProduct"]);
+
 });
