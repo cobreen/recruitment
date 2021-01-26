@@ -1,0 +1,168 @@
+// Fonts
+@import url('https://fonts.googleapis.com/css?family=Nunito');
+
+// Variables
+@import 'variables';
+
+// Bootstrap
+@import '~bootstrap/scss/bootstrap';
+
+.navbar {
+    position: sticky;
+    top: 0;
+    z-index: 1;
+}
+
+.products {
+    display: grid;
+    grid-template-columns: repeat( auto-fit, minmax(230px, 1fr) );
+    gap: 25px;
+    .product {
+        background: #f7f7f7;
+        border-radius: 5px;
+        border: 1px solid gainsboro;
+        padding: 10px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        transition: .25s ease;
+        &:hover {
+            background: #ecf5ff;
+        }
+        img {
+            max-width: 100%;
+        }
+        .name {
+            font-weight: bold;
+            font-size: 25px;
+            color: transparent;
+            text-align: center;
+            background-color: #898989;
+            text-shadow: 2px 2px 3px rgba(255,255,255,0.5);
+            -webkit-background-clip: text;
+            -moz-background-clip: text;
+            background-clip: text;
+        }
+        .price {
+            font-weight: lighter;
+            color: #9b9a9a;
+        }
+        button.buy {
+            -webkit-transform: skew(-15deg);
+            transform: skew(-15deg);
+            color: #fff;
+            background-color: #007bff;
+            border: 1px solid #007bff;
+            padding: 5px 50px;
+            font-size: 15px;
+            transition: all .25s ease;
+            &:hover {
+                color: #fff;
+                background-color: #0069d9;
+                border-color: #0062cc;
+            }  
+            &:focus {
+                box-shadow: 0 0 0 0.2rem rgba(38,143,255,.5);
+            }
+            div {
+                -webkit-transform: skew(15deg);
+                transform: skew(15deg)
+            }
+        }
+    }
+}
+
+.cart {
+    padding: 10px;
+    width: 320px;
+    overflow: hidden;
+    .empty {
+        text-align: center;
+    }
+    .cart-item {
+        display: flex;
+        justify-content: space-between;
+        position: relative;
+        &:hover .remove {
+            right: -10px;
+        }
+        .name {
+            font-weight: bold;
+            flex: 3;
+            word-break: break-all;
+        }
+        .ammount {
+            flex: 1;
+            font-weight: normal;
+            color: #a6a4a4;
+        }
+        .price {
+            flex: 1;
+            text-align: right;
+        }
+        .remove {
+            position: absolute;
+            right: -100%;
+            transition: .25s ease;
+            background-color: red;
+            color: white;
+            font-weight: bold;
+            width: 30px;
+            padding: 0 5px;
+            text-align: center;
+            cursor: pointer;
+        }
+    }
+    .total {
+        margin-top: 20px;
+        text-align: right;
+        font-weight: bold;
+    }
+    .checkout {
+        width: 100%;
+        text-align: center;
+        height: 25px;
+        border: none;
+        background-color: #007bff;
+
+        position: relative;
+        transition: all .25s ease;
+        &:hover {
+            color: #fff;
+            background-color: #0069d9;
+            border-color: #0062cc;
+        }  
+        
+        &:before, &:after {
+            content: "";
+            background-color: transparent;
+            height: 0;
+            width: 0;
+            position: absolute;
+            top: 0;
+        }
+        &:before {
+            left: 0;
+            border-left: 30px solid white;
+            border-top: 12.5px solid transparent;
+            border-bottom: 12.5px solid transparent;
+        }
+        &:after {
+            right: 0;
+            border-right: 30px solid white;
+            border-top: 12.5px solid transparent;
+            border-bottom: 12.5px solid transparent;
+        }
+        button {
+            width: 100%;
+            height: 100%;
+            border: none;
+            color: white;
+            background-color: transparent;
+            transition: all .25s ease;
+            &:focus {
+                background-color: #0058c8;
+            }
+        }
+    }
+}
