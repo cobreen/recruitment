@@ -1,0 +1,321 @@
+{
+	"info": {
+		"_postman_id": "af2f3c9e-18b4-49f4-a0d6-1f936b345335",
+		"name": "TestTaskApi",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Tweets",
+			"item": [
+				{
+					"name": "Create Tweet",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJhdWQiOiI5NTI1MTNlMy1kOWRlLTRiODUtOWYwNC1kNjE3NDg4NjlhNmUiLCJqdGkiOiI5OGM3NmM5NGE1N2QzODA3NzJlNjQyMGEzYzY3NzZkYjhjYWRiMWVmNTk3MTNlOWFmNDg4OTVjMWNkZDAyNTkwYTRiMmUyZjM5M2NhNjQ0NyIsImlhdCI6MTYzOTg2NjEyNi41Nzk2NDQsIm5iZiI6MTYzOTg2NjEyNi41Nzk2NDksImV4cCI6MTY3MTQwMjEyNi40NjY1MTMsInN1YiI6IjEwIiwic2NvcGVzIjpbXX0.B3WmxURSFKAnp-eSaaxKqcV_Qi8Ro77BXEXOKfN0Y8qckBou4izjF_VUy7jNaAvWCKDKVaZbnq4xyy7aHBMqiIe76A8trTeROHnf2qVRZ3vmYeT0cxD1idfzjD59fnhPIKTZJIJv4CMNNwXHAK8NCULlt8T41ceZyfZuK4uZjyAr2llaWFjkKXgVx7_PKb9XbRijKks9Sm_BdrqkA154NfOCsUNod7Yi_wOYMAY9vHc-WRRBO6bpliS-wqZZykPx8NiVLD2YIj5z8DfZ8_j65WGawtup8Ox_WGZwyTj53hoYX13_lIpXs4OrbYgl4ZmfbyXTkaVk9DZrG9xsA7zXpZDR9HwO-AyIKgUfj6bcqWKfmf7Ida0CJyb0gQp9MT2UeIEYCHl8Ijj91DQFK0EgULP-JZcHpV5xcHUKQyL1ZElviIp72Dugqrt1gjLL6uGgL4QY8UptoUq_tSgW9rLiZOCXNRMQcD0HU64WwXu4h1_jSTtvqkALQDaU0yYqs_nf78Ahix1lz6xLh_613ZEZ_o9EtT4473pzYf95DGQ_n4zQ9NcxI8OXYftlwYf7bLMzr1uFtHTboWEtCDKJKn5rzLM8wlqsDj8BenogvP38ShoMV454oKMYdOGJtWCD9gfF0RwwrpqJ9Hs4TFHUGsqtTVLFd68aHQDeGnhd98tkA1Q",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "text",
+									"value": "HelloHelloHelloHelloHelloHelloHelloHelloHelloHelloHelloHelloHelloHelloHelloHelloHelloHelloHelloHelloHell",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "localhost:8080/api/tweet",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"tweet"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "User Tweets (all)",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:8080/api/user/10/tweets",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"user",
+								"10",
+								"tweets"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Random tweet",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:8080/api/tweets/random",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"tweets",
+								"random"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "User",
+			"item": [
+				{
+					"name": "Get user",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJhdWQiOiI5NTI1MTNlMy1kOWRlLTRiODUtOWYwNC1kNjE3NDg4NjlhNmUiLCJqdGkiOiI5OGM3NmM5NGE1N2QzODA3NzJlNjQyMGEzYzY3NzZkYjhjYWRiMWVmNTk3MTNlOWFmNDg4OTVjMWNkZDAyNTkwYTRiMmUyZjM5M2NhNjQ0NyIsImlhdCI6MTYzOTg2NjEyNi41Nzk2NDQsIm5iZiI6MTYzOTg2NjEyNi41Nzk2NDksImV4cCI6MTY3MTQwMjEyNi40NjY1MTMsInN1YiI6IjEwIiwic2NvcGVzIjpbXX0.B3WmxURSFKAnp-eSaaxKqcV_Qi8Ro77BXEXOKfN0Y8qckBou4izjF_VUy7jNaAvWCKDKVaZbnq4xyy7aHBMqiIe76A8trTeROHnf2qVRZ3vmYeT0cxD1idfzjD59fnhPIKTZJIJv4CMNNwXHAK8NCULlt8T41ceZyfZuK4uZjyAr2llaWFjkKXgVx7_PKb9XbRijKks9Sm_BdrqkA154NfOCsUNod7Yi_wOYMAY9vHc-WRRBO6bpliS-wqZZykPx8NiVLD2YIj5z8DfZ8_j65WGawtup8Ox_WGZwyTj53hoYX13_lIpXs4OrbYgl4ZmfbyXTkaVk9DZrG9xsA7zXpZDR9HwO-AyIKgUfj6bcqWKfmf7Ida0CJyb0gQp9MT2UeIEYCHl8Ijj91DQFK0EgULP-JZcHpV5xcHUKQyL1ZElviIp72Dugqrt1gjLL6uGgL4QY8UptoUq_tSgW9rLiZOCXNRMQcD0HU64WwXu4h1_jSTtvqkALQDaU0yYqs_nf78Ahix1lz6xLh_613ZEZ_o9EtT4473pzYf95DGQ_n4zQ9NcxI8OXYftlwYf7bLMzr1uFtHTboWEtCDKJKn5rzLM8wlqsDj8BenogvP38ShoMV454oKMYdOGJtWCD9gfF0RwwrpqJ9Hs4TFHUGsqtTVLFd68aHQDeGnhd98tkA1Q",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "name",
+									"value": "aaa",
+									"type": "text",
+									"disabled": true
+								},
+								{
+									"key": "email",
+									"value": "mr.cobreen@gmail.com",
+									"type": "text",
+									"disabled": true
+								},
+								{
+									"key": "password",
+									"value": "12345678",
+									"type": "text",
+									"disabled": true
+								}
+							]
+						},
+						"url": {
+							"raw": "localhost:8080/api/user",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"user"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Register user",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "email",
+									"value": "mr.cobreen1@gmail.com",
+									"type": "text"
+								},
+								{
+									"key": "name",
+									"value": "aaa",
+									"type": "text"
+								},
+								{
+									"key": "password",
+									"value": "12345678",
+									"type": "text"
+								},
+								{
+									"key": "birth_year",
+									"value": "-1000000",
+									"type": "text"
+								},
+								{
+									"key": "file",
+									"type": "file",
+									"src": "/C:/Users/Admin/Desktop/HTML/Рецепти/FOTO/logo-white.png"
+								}
+							]
+						},
+						"url": {
+							"raw": "localhost:8080/api/register",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"register"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Login user",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "email",
+									"value": "mr.cobreen@gmail.com",
+									"type": "text"
+								},
+								{
+									"key": "password",
+									"value": "12345678",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "localhost:8080/api/login",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"login"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "UpdateUser",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJhdWQiOiI5NTI1MTNlMy1kOWRlLTRiODUtOWYwNC1kNjE3NDg4NjlhNmUiLCJqdGkiOiI5OGM3NmM5NGE1N2QzODA3NzJlNjQyMGEzYzY3NzZkYjhjYWRiMWVmNTk3MTNlOWFmNDg4OTVjMWNkZDAyNTkwYTRiMmUyZjM5M2NhNjQ0NyIsImlhdCI6MTYzOTg2NjEyNi41Nzk2NDQsIm5iZiI6MTYzOTg2NjEyNi41Nzk2NDksImV4cCI6MTY3MTQwMjEyNi40NjY1MTMsInN1YiI6IjEwIiwic2NvcGVzIjpbXX0.B3WmxURSFKAnp-eSaaxKqcV_Qi8Ro77BXEXOKfN0Y8qckBou4izjF_VUy7jNaAvWCKDKVaZbnq4xyy7aHBMqiIe76A8trTeROHnf2qVRZ3vmYeT0cxD1idfzjD59fnhPIKTZJIJv4CMNNwXHAK8NCULlt8T41ceZyfZuK4uZjyAr2llaWFjkKXgVx7_PKb9XbRijKks9Sm_BdrqkA154NfOCsUNod7Yi_wOYMAY9vHc-WRRBO6bpliS-wqZZykPx8NiVLD2YIj5z8DfZ8_j65WGawtup8Ox_WGZwyTj53hoYX13_lIpXs4OrbYgl4ZmfbyXTkaVk9DZrG9xsA7zXpZDR9HwO-AyIKgUfj6bcqWKfmf7Ida0CJyb0gQp9MT2UeIEYCHl8Ijj91DQFK0EgULP-JZcHpV5xcHUKQyL1ZElviIp72Dugqrt1gjLL6uGgL4QY8UptoUq_tSgW9rLiZOCXNRMQcD0HU64WwXu4h1_jSTtvqkALQDaU0yYqs_nf78Ahix1lz6xLh_613ZEZ_o9EtT4473pzYf95DGQ_n4zQ9NcxI8OXYftlwYf7bLMzr1uFtHTboWEtCDKJKn5rzLM8wlqsDj8BenogvP38ShoMV454oKMYdOGJtWCD9gfF0RwwrpqJ9Hs4TFHUGsqtTVLFd68aHQDeGnhd98tkA1Q",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "email",
+									"value": "mr.cobreen@gmail.com",
+									"type": "text"
+								},
+								{
+									"key": "name",
+									"value": "habib",
+									"type": "text"
+								},
+								{
+									"key": "file",
+									"type": "file",
+									"src": "/C:/Users/Admin/Desktop/HTML/Рецепти/FOTO/1.jpg"
+								},
+								{
+									"key": "birth_year",
+									"value": "2001",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "localhost:8080/api/user",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"user"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
