@@ -176,12 +176,12 @@
 							"formdata": [
 								{
 									"key": "email",
-									"value": "mr.cobreen1@gmail.com",
+									"value": "mr.cobreen@gmail.com",
 									"type": "text"
 								},
 								{
 									"key": "name",
-									"value": "aaa",
+									"value": "Mikola",
 									"type": "text"
 								},
 								{
@@ -191,13 +191,13 @@
 								},
 								{
 									"key": "birth_year",
-									"value": "-1000000",
+									"value": "2000",
 									"type": "text"
 								},
 								{
 									"key": "file",
 									"type": "file",
-									"src": "/C:/Users/Admin/Desktop/HTML/Рецепти/FOTO/logo-white.png"
+									"src": []
 								}
 							]
 						},
@@ -286,13 +286,13 @@
 								},
 								{
 									"key": "name",
-									"value": "habib",
+									"value": "Test",
 									"type": "text"
 								},
 								{
 									"key": "file",
 									"type": "file",
-									"src": "/C:/Users/Admin/Desktop/HTML/Рецепти/FOTO/1.jpg"
+									"src": []
 								},
 								{
 									"key": "birth_year",

@@ -1,11 +1,12 @@
 # Setup
 App needs ports `5432` and `8080` to run.
-Copy `.env.example` into `.env`
+Copy `.env.example` into `.env` in `src` folder
 Run:
 - `docker-compose up -d`
 - `docker exec -it php-apache /bin/bash`
 - `composer install`
 - `php artisan migrate`
+- `php artisan passport:install`
 
 
 # usage:
